@@ -85,7 +85,7 @@ void loop()
         //Update last known state of this switch
         ButtonPrev[Pin] = 1;
         digitalWrite(GreenLedPins[(Pin/3)], HIGH); // Note : set LOW to put the led ON
-        digitalWrite(RedLedPins[(Pin/3)], LOW); // Note : set LOW to put the led ON
+        digitalWrite(RedLedPins[(Pin/3)], HIGH); // Note : set LOW to put the led ON
 
 
       }
@@ -106,6 +106,7 @@ void loop()
         //Update last known state of this switch
         ButtonPrev[Pin] = 0;
         digitalWrite(GreenLedPins[(Pin/3)], HIGH); // Note : set LOW to put the led ON
+        digitalWrite(RedLedPins[(Pin/3)], LOW); // Note : set LOW to put the led ON
 
 
       }
@@ -125,7 +126,8 @@ void loop()
         Serial.println(" OK");
       }
       digitalWrite(GreenLedPins[i], LOW); // Note : set LOW to put the led ON
-        digitalWrite(RedLedPins[i], HIGH); // Note : set LOW to put the led ON
+      digitalWrite(RedLedPins[i], HIGH); // Note : set LOW to put the led ON
+
 
     }
     if (DEBUG) {           // If we want to see the pin values for debugging...
@@ -136,6 +138,9 @@ void loop()
       Serial.println(CellValue);
     }
 
+
   }
 
 }
+
+
